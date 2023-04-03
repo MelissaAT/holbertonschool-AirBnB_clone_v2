@@ -36,5 +36,6 @@ def python_text(text):
 def n_text(n):
     if type(n) == int:
         return f'{n} is a number'
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
