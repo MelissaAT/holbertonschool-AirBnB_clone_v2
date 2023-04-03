@@ -2,7 +2,7 @@
 """Write a script that starts a
 Flask web application"""
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -32,10 +32,17 @@ def python_text(text):
         return "Python " + f'{text}'.replace("_", " ")
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def n_text(n):
-    if n == int:
+    if type(n) == int:
         return f'{n} is a number'
+    
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def number_template(n):
+    return render_template('5-number.html', number=n)
+
+
+
 
 
 if __name__ == '__main__':
