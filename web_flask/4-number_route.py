@@ -32,9 +32,9 @@ def python_text(text):
         return "Python " + f'{text}'.replace("_", " ")
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def n_text(n):
-    if n is int:
+    if n == int:
         return "n"
 
 
