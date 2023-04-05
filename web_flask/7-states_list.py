@@ -9,10 +9,12 @@ from models.state import State
 
 app = Flask(__name__)
 
+
 @app.route('/states_list', strict_slashes=False)
 def hello_8():
     states_dict = storage.all(State)
     return render_template('7-states_list.html', states=states_dict.values())
+
 
 @app.teardown_appcontext
 def s_close(exception):
@@ -21,5 +23,3 @@ def s_close(exception):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
-
