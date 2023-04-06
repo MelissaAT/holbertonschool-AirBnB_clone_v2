@@ -5,17 +5,20 @@ from models import storage
 from models.state import State
 from models.city import City
 
+
 app = Flask(__name__)
 
 
 @app.route('/cities_by_states', strict_slashes=False)
 def cities_by_states():
-    states_dict = storage.all(State)
-    return render_template('8-cities_by_states.html', states=states_dict.values())
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda state: state.name)
+
+    return render_template('7-cities_by_states.html', states=states)
 
 
 @app.teardown_appcontext
-def close_sql(exception):
+def close_storage(exception):
     storage.close()
 
 
