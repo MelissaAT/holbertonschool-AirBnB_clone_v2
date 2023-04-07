@@ -9,6 +9,7 @@ from models.state import State
 
 app = Flask(__name__)
 
+
 @app.route("/", strict_slashes=False)
 def display_text():
     return "Hello HBNB!"
@@ -52,7 +53,6 @@ def number_template1(n=None):
     else:
         a = "odd"
     return render_template('6-number_odd_or_even.html', number=n, a=a)
-
 
 
 @app.route('/states_list', strict_slashes=False)
