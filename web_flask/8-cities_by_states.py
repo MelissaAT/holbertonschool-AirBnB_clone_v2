@@ -8,6 +8,7 @@ from models.city import City
 
 app = Flask(__name__)
 
+
 @app.route("/", strict_slashes=False)
 def display_text():
     return "Hello HBNB!"
