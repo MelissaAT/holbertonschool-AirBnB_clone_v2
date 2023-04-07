@@ -9,6 +9,7 @@ from models.state import State
 
 app = Flask(__name__)
 
+
 @app.route("/", strict_slashes=False)
 def display_text():
     return "Hello HBNB!"
@@ -54,9 +55,16 @@ def number_template1(n=None):
     return render_template('6-number_odd_or_even.html', number=n, a=a)
 
 
+<<<<<<< HEAD
 
 from flask import Flask, render_template
 from models import storage
+=======
+@app.route('/states_list', strict_slashes=False)
+def hello_8():
+    states_dict = storage.all(State)
+    return render_template('7-states_list.html', states=states_dict.values())
+>>>>>>> 5aa4ec71ae0b98ebcbecac49e6c6c88391e84370
 
 app = Flask(__name__)
 
@@ -76,4 +84,4 @@ if __name__ == '__main__':
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5000)

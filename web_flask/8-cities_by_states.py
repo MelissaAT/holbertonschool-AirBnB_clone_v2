@@ -8,6 +8,7 @@ from models.city import City
 
 app = Flask(__name__)
 
+
 @app.route("/", strict_slashes=False)
 def display_text():
     return "Hello HBNB!"
@@ -78,4 +79,4 @@ def close_storage(exception):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5000)
